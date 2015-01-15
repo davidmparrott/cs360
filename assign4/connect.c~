@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+
+int main(int argc, char** argv){
+  int colon = 0;
+  int fd[2];
+  
+  for(int i = 0; i < argc; i++){
+    if(strcmp(argv[i],":") == 0){
+      colon = i;
+      argv[i] = NULL;
+      break;
+    }else{
+      continue;
+    }
+  }
+
+  pipe(fd);
+  int rdr = fd[0], wtr = fd[1];
+  if(fork()){
+    close(wtr);
+    close(0);
+    dup(rdr);
+    execvp(argv[colon+1], argv+colon+1);
+    fprintf(stderr, "%s: exec failed \n", argv[0]);
+  }else{
+    close(rdr);
+    close(1); 
+    dup(wtr);
+    execvp(argv[1], argv+1);
+    fprintf(stderr, "%s: exec failed \n", argv[0]);	
+  }
+  return (1);
+}

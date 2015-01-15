@@ -1,0 +1,10 @@
+#David Parrott
+#cs360 Spring 2014
+#assignment 3
+#11239947
+
+LIBDIR = -L$(GET_WORD)/lib
+INCLUDEDIR = -I$(GET_WORD)/include
+
+words: readable.c  
+	gcc -std=c99 $(LIBDIR) $(INCLUDEDIR) -lm -g readable.c -o read -lget

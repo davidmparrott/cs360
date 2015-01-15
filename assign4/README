@@ -1,0 +1,16 @@
+David Parrott
+CS 360
+Assignment 4
+connect.c
+
+Description:
+connect.c duplicates the piping functionality of the shell
+
+To Compile:
+gcc -std=c99 -g connect.c -o connect
+
+To Execute:
+./connect <filename1> <options> : <filename2> <options>
+ex:
+./connect ls -l : sort
+this will sort the file list lexically.

@@ -1,0 +1,29 @@
+readable.c takes either one or zero arguments.
+
+If one argument is passed it assumes it to be a 
+pathname (relative or absolute). If no argument 
+is passed the pathname of the present directory
+is assumed.
+
+Readable recursively traverses all subdirectories
+of the pathname passed, starting with the pathname
+and lists every file that is readable by the
+current process.
+
+Symbolic links are not followed but a note is 
+printed to STDOUT listing the name.
+
+To Compile:
+makefile is included in readable.tar.gz; however,
+gcc -std=c99 readable.c -o read
+will compile an executable in the current
+directory.
+
+To Execute:
+./read 
+or ./read <pathname>
+
+File list:
+readable.c
+makefile
+README

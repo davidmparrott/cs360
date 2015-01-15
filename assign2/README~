@@ -1,0 +1,21 @@
+David Parrott
+CS 360
+Assignment 2 ok.c
+
+Description:
+ok.c takes a word no more than 15 characters in length from STDIN and
+checks a dictionary located in /cs_Share/class/cs360/lib/webster to
+see if the word is contained within. 
+
+If the word is found 'yes' is printed to STDOUT. 
+If the word is not found 'no' is printed to STDOUT
+Error informaiton is printed to STDERR for improperly formatted strings
+of if there is an error accessing the dictionary.
+Words are found using binary search.
+
+To compile:
+unpack all contents from ok.tar.gz
+make
+
+To run:
+./ok <seearch string>

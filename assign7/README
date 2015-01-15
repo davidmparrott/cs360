@@ -1,0 +1,15 @@
+David Parrott
+11239947
+CS 360 assignment 7
+Dining Philosophers (POSIX semaphores)
+
+Description:
+Solves the Dining Philosophers problem for N (5) philosophers using POSIX semaphores. Philosophers begin by thinking. Some philosophers will reach for their left chopstick first while others will reach for their right chopstick first. 
+f[id & 1] = (id + 1) % N;
+A status message is displayed each time a phiosopher eats of thinks with the id number (0-4) and number of time units spent on the activity. When a philosopher has eaten at least 100 units they leave the table (thread closes). 
+
+To Compile:
+gcc -std=c99 -pthread pthread_philos.c random_r.c -o philo -lm
+
+To Execute:
+./philo

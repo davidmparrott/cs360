@@ -1,0 +1,24 @@
+David Parrott
+11239947
+CS 360
+Assignment 8
+Date/Time server/client
+
+description:
+Two programs have been written. One (dayserve) opens a socket on a port specified by MY_PORT_NUMBER
+and awaits a connection. The other (daytime) connects to a remote host specified by the user on
+the command line eg ./daytime 127.0.0.1. When dayserve opens a connection it spawns a child process 
+that gets the date/time data and writes it to the socket. This child process dies after it writes.
+The parent continues to listen for more connections. After daytime receives data it outputs whatever
+it received to STDOUT and terminates.
+
+to compile: 
+make all
+
+to execute:
+to execute dayserve ./dayserve
+to execute daytime  ./daytime <remote host>
+
+to terminate:
+daytime will terminate after completion
+dayserve must be terminated with ctrl-c
